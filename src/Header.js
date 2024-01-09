@@ -40,7 +40,7 @@ export default function Header() {
               <li><a href="/contact-us">Contact Us</a></li>
             </ul>
           </li>
- 
+          <img className="Logo" src={LogoWhite} alt="AgenKlik" />
           <div className="Login">
            
           </div>
