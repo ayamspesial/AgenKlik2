@@ -17,7 +17,7 @@ import SearchResult from './SeachBar';
 function App() {
   return (
     <>
-      <Router>
+   
  <Header/>
         <div className='content'>
           <Routes>
@@ -35,7 +35,7 @@ function App() {
         
           </Routes>
         </div>
-      </Router>
+    
     </>
   );
 }
