@@ -1,0 +1,163 @@
+
+<link rel="stylesheet" href="Menerapkan.css">
+
+<body>
+    
+<div class="Title">
+
+    <h1>Menerapkan Sekarang</h1>
+</div>
+ <div class="alasan">
+  <h2>
+      alasan mengapa Anda harus bergabung dengan kami!</h2> 
+      <h3>Anda harus bergabung dengan kami karena kami menyediakan dukungan terbaik untuk jalur karier baru Anda. Di perusahaan kami, kami sangat berkomitmen untuk membantu Anda mencapai potensi penuh Anda dalam karier Anda. Tim kami yang berpengalaman dan berpengetahuan luas akan membimbing Anda melalui perjalanan ini, memberikan pelatihan terbaik, dan memberikan dukungan yang Anda butuhkan untuk tumbuh dan berkembang.
+
+        Selain itu, staf kami sangat peduli dan selalu siap memberikan dukungan. Kami memiliki budaya kerja yang didasarkan pada kolaborasi dan saling mendukung. Dengan bergabung dengan tim kami, Anda akan merasakan energi positif dan semangat tim yang akan menginspirasi Anda untuk mencapai tingkat keberhasilan yang lebih tinggi. Bersama-sama, kita dapat mencapai tujuan besar dan membentuk masa depan yang sukses. Jadi, mari bergabung dengan kami dan jadilah bagian dari tim yang luar biasa ini!</h3>
+</div>
+
+<div class="forms">
+    <div class="forms">
+        <form action="https://sheetdb.io/api/v1/2j66mf3lvoeyo" method="post">
+            <div class="Inputs">
+                <h3>Nama lengkap</h3>
+                <input type="text" class="Required" name="name" minlength="6" maxlength="30" required>
+            </div>
+            <div class="Inputs">
+                <h3>Umur</h3>
+                <input type="number" class="Required" name="Age" min="18" max="99" required>
+            </div>
+            <div class="Inputs">
+                <h3>Nomor HP</h3>
+                <input type="tel" class="Required" name="number" minlength="12" maxlength="12" required>
+            </div>
+            <div class="Inputs optional">
+                <h3>email</h3>
+                <input type="email" class="Required" name="email" minlength="10" maxlength="30">
+            </div>
+            <div class="Inputs questions">
+                <h3>Qualifikasi (kerja sebelum)</h3>
+                <textarea class="questions1" name="question1" cols="30" rows="10" maxlength="10000" required></textarea>
+            </div>
+            <div class="Inputs questions">
+                <h3>alasan Anda ingin bergabung dengan kami</h3>
+                <textarea class="questions1" name="question2" cols="30" rows="10" maxlength="10000" required></textarea>
+            </div>
+            <div class="Inputs questions">
+                <h3>Apakah yang bikin kalian lebih memenuhi syarat dari setiap orang?</h3>
+                <textarea class="questions1" name="question3" cols="30" rows="10" maxlength="10000" required></textarea>
+            </div>
+            <div class="Inputs" id="pets">
+                <h3>silakan klik opsi berikut</h3>
+                <h3>apakah kamu nyaman dengan hewan peliharaan?</h3>
+                <input type="checkbox" name="pets" class="Textarea" id="TorF" required>
+                <h3>jika ya, apakah ada pengecualian</h3>
+                <input type="text" name="acceptablePets">
+            </div>
+            <input type="hidden" id="photoLink" name="photoLink">
+          <div class="Inputs">
+    <h3>Profile Picture</h3>
+    <input type="file" accept="image/*" id="photoUpload" onchange="loadFile(event, 'output')" style="display: none;" name="image" class="Required" required>
+    <label for="photoUpload" id="customSubmit">
+        <img src="png-transparent-upload-computer-icons-others-miscellaneous-angle-number.png" alt="Upload Image" class="Placeholderimage" id="output">
+    </label>
+</div>
+
+<div class="Inputs">
+    <h3>KTP</h3>
+    <input type="file" accept="image/*" id="photoUpload1" onchange="loadFile(event, 'output1')" style="display: none;" name="KTP" class="Required" required>
+    <label for="photoUpload1" id="customSubmit1">
+        <img src="png-transparent-upload-computer-icons-others-miscellaneous-angle-number.png" alt="Upload Image" class="Placeholderimage" id="output1">
+    </label>
+</div>
+            <div id="Submit">
+                <button type="submit" id="submitButton">Submit</button>
+            </div>
+    
+        </form>
+    </div>
+    
+                
+         <script src="Menerapkan.js"></script>
+
+   
+       
+
+
+
+</div>
+<script>
+
+
+
+
+
+async function postData(url = 'https://sheetdb.io/api/v1/2j66mf3lvoeyo', data = {}) {
+  const Info = document.querySelectorAll('.Required');
+  const Answers = document.querySelectorAll('.questions1');
+
+  const areInfoValid = [...Info].every(element => element.value.trim().length >= 2);
+  const areAnswersValid = [...Answers].every(element => element.value.trim().length >= 2);
+
+  if (areInfoValid && areAnswersValid) {
+    const response = await fetch(url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    try {
+      const newData = await response.json();
+      console.log(newData);
+      return newData;
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
+}
+
+document.getElementsByTagName('form')[0].addEventListener('submit', async function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  const url = 'https://sheetdb.io/api/v1/2j66mf3lvoeyo';
+  const formData = new FormData(this); // Use 'this' to refer to the current form
+
+  // Convert FormData to JSON object
+  let obj = {};
+  formData.forEach((value, key) => {
+    obj[key] = value;
+  });
+
+  const data = await postData(url, obj);
+
+
+  if (!data) {
+    event.preventDefault(); // Prevent the form from submitting if the conditions are not met
+  }
+});
+
+
+document.getElementById('photoUpload1').addEventListener('change', function (event) {
+    const photoInput1 = event.target;
+
+    if (photoInput1.files.length > 0) {
+        const photoFile = photoInput1.files[0];
+
+        // Perform any necessary image processing here
+        // Once you have the processed image, you can upload it to Google Drive
+
+        // Replace 'your-image-link' with the actual Google Drive link for the uploaded image
+        const driveLink = 'https://drive.google.com/drive/folders/1NVFb-RcppIGZZOTcEzX-9wEsqDwi1k7L?usp=sharing';
+
+        // Store the generated Google Drive link in a hidden input field
+        document.getElementById('photoLink').value = driveLink;
+    }
+});
+
+
+   </script>
+
+
+</body>

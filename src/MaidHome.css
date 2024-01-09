@@ -1,0 +1,884 @@
+@font-face {
+    font-family: 'Momcake';
+    src: url('Momcake-Thin.otf') format('opentype');
+}
+
+
+
+.TopHeader{
+  background-color: #0873ee;
+  border-radius: 29px;
+  background:#0873ee;
+  padding: 20px;
+  width: 220px;
+  height: 50px;
+  font-weight: 100;
+font-size: xx-small;
+  top: -40px;
+  z-index: 3;
+  position: relative;
+}
+
+
+
+
+ 
+
+.Slider {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px; 
+    white-space: nowrap;
+
+  }
+.CanNegotiate{
+  color: lightgreen;
+
+}
+.TopBox {
+    background-image: url(360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg);
+    border-radius: 29px;
+    height: 330px;
+    font-size: 20px;
+    width: 340px;
+    z-index: 3;
+}
+.ProfileBox:hover {
+    transform: scale(1.1);
+    
+}
+
+
+
+.ProfileBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+.navbar {
+    background-color: #0873ee;
+    top: -0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+    
+
+}
+
+
+.Payment{
+
+position: absolute;
+  top: 200px;
+  font-size: 30px;
+  padding-left: 20px;
+  background-color: #115E83;
+  color: #fff;
+  padding: 30px;
+  border-radius: 29px;
+}
+
+.FillIn{
+  position: relative;
+padding-top: 10px;
+
+
+
+}
+.menu-toggle {
+    cursor: pointer;
+    display: none;
+}
+
+.InputRecepient {
+  display: block;
+  margin-top: 30px;
+  width: 300px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.InputRecepient::placeholder{
+  color: #ffffff;
+}
+
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #0873ee;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+
+   
+}
+
+
+.Search {
+    position: relative;
+    top: 77%;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 29px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 680px;
+
+}
+
+
+
+.dropdown-menu li {
+    padding: 15px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: #0873ee;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Style for the nav-link */
+    .nav-link {
+      position: relative;
+      display: inline-block;
+    }
+ 
+    }
+
+
+    /* Style for the hamburger icon (span tags) */
+    .nav-link span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+
+    .dropdown-menu-mobile {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      color: #ffffff;
+      padding: 0; 
+      margin: 0; 
+      list-style: none;
+    }
+    .dropdown-menu-mobile-input{
+
+      color: #ffffff;
+
+
+    }
+
+    .dropdown-menu-mobile a {
+      text-decoration: none; /* Optional: Remove underline */
+      color: white;
+      outline: none; /* Remove the default outline */
+    }
+    
+    /* Style for the list items in the dropdown-menu-mobile */
+    .dropdown-menu-mobile li {
+      padding: 8px;
+    }
+    
+   
+
+   
+
+
+
+
+
+
+.Login{z-index: 1; left: 80%;
+     position: absolute;
+    display: block;
+    white-space: nowrap;
+}
+
+button{cursor: pointer;}
+
+.Categories{
+position: relative;
+top: 200px;
+font-size: 50px;
+display: inline;
+}
+
+.ProfileBox{
+position: absolute;
+transition: transform 0.3s ease-in-out;
+padding: 40px;
+white-space: nowrap;
+padding-right: 20px; 
+    position: relative; 
+    display: inline-block;
+      cursor: pointer;
+}
+
+.Strengths{
+
+
+  font-weight: 500;
+}
+
+.ProfilePicture img {
+    border-radius: 10%;
+    z-index: 1;
+    position: relative;
+  }
+  .Bottombox{background-color: #0873ee;
+    border-radius: 29px;
+    background:#0873ee;
+    padding: 20px;
+    width: 300px;
+    height: 80px;
+    font-weight: lighter;
+    display: inline-block;
+    top: -40px;
+    position: relative;
+  }
+
+  .Bottombox h1{
+    top: 300px;
+    font-weight: 200;
+    font-size: 35px;
+  }
+
+  .Bottombox h2{
+
+    font-weight: 50;
+    font-size: 22px;
+
+
+  }
+
+
+  .BenefitList img{
+position: relative;
+    width: 120px;
+height: 120px;
+
+
+
+    
+  }
+  .Results{
+
+    top:20%
+  }
+
+
+
+  .Information{
+    font-size:20px;
+position: relative;
+top: -40px;
+list-style-type: none;}
+
+.name, .age {
+    display: inline-block;
+  }
+  #Featured{position: relative;
+    top: 1000px;}
+
+
+
+
+#Pembantu{position: relative;
+top: 400px
+   
+}
+#Supir{position: relative;
+    top: 800px;}
+
+ #BabySitter{position: relative;
+   top: 1200px;}
+
+.Title{color: #0873ee;
+font-size: 60px;
+text-align: center;}
+
+.inputarea{position: relative;
+    background-color: transparent;
+    border: solid;
+color: black;
+bottom: 4px;
+right: 2px;
+outline: none;
+width: 600px;
+height:50px;
+font-size: 20px;
+margin: 12px;
+display: block;
+}
+
+.inputarea::placeholder{color: black;
+    font-size: 20px;}
+    button.Searchbutton {
+        position: relative;
+        overflow: hidden;
+        background-color: #0873ee; 
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        width: 550px;
+        height:40px ;
+        border-radius: 29px;
+        font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+        font-size:20px ;
+        left:5%
+      }
+      
+ 
+      
+      button.Searchbutton:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* White box shadow */
+       
+      }
+      
+     
+
+.Logo{width: 200px;
+display: inline-block; position: absolute; right: 46%; top: 25%;}
+.Button {
+  background-color: #3498db; /* Blue color */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+
+  &:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+  }
+}
+.Body {
+position: absolute;
+ top:100px;
+  border-radius: 10px;
+
+  color: #000000;
+  width: 100%;
+  }
+  #PaymentButton {
+    position: relative;
+    padding: 15px 200px;
+    font-size: 18px;
+    top: 40px;
+    right: 200px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #4caf50; 
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+  /* Hover effect */
+  #PaymentButton:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+
+  .NegotiableText{
+    position: relative;
+    top:-140%
+
+
+
+
+
+
+  }
+  
+.QuestionContainer{
+  position: relative;
+  top:480px;
+  width: 50%;
+  left: 30px;
+
+}
+
+
+
+.MiniProfile{
+     position: absolute;
+    height: 300px;
+    width: 100%;
+    padding-top: 10%;
+    padding-left: 20px;
+
+    background-color: #115E83;
+ 
+
+}
+
+
+
+.WorkDetails{
+position: relative;
+top: -140%;
+font-size: 44px;
+font-weight: 400;
+color: white;
+
+
+
+}
+
+#detailedProfilepic{
+  width: 220px;
+  height: 220px;
+  border-radius: 29px;
+  position: relative;
+  bottom: 20%;
+  left: 85%;
+  
+  }
+.Benefits {
+    border-top: 2px solid #000000; /* Adjust the thickness and color as needed */
+    border-bottom: 2px solid #000000; /* Adjust the thickness and color as needed */
+    display: flex;
+  }
+    .BasicDetails{
+      font-size: 70PX;
+      position: relative;
+      top: -130%;
+      color: #ffffff;
+      font-weight: 400;
+    }
+.BenefitList{
+font-size: 10px;
+margin: 7%;
+text-align: center;
+
+
+
+
+
+
+
+}
+
+.BenefitList h2{text-align: center;
+}
+        
+.Videos {
+    position: relative;
+    
+  }
+
+
+
+
+#AgenKlikLogo{
+    position: relative;
+    top: 120px;
+    display: block;
+}
+
+.AgenKlikLogo{  position: relative;
+    top: 60px;
+    display: block;
+
+
+}
+/* Add this to your CSS file */
+/* Style for file input labels */
+.Form label[for="photoInput"],
+.Form label[for="ktpInput"] {
+  display: block;
+  margin-bottom: 8px;
+  font-size: large;
+  text-align: center;
+  width: 50%;
+}
+
+/* Style for file input */
+.Form input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+/* Style for the custom file input container */
+.Form .file-input-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Style for the custom file input button */
+.Form .file-input-container .custom-file-input {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Style for the file name display */
+.Form .file-input-container .file-name {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Style for the submit button */
+.Form button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Style for the submit button on hover */
+.Form button:hover {
+  background-color: #45a049;
+}
+
+
+.SubmitSuccess{
+
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+  padding: 20px; /* Padding around content */
+  margin: 200px 0; /* Margin to separate from other elements */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+position: fixed;
+z-index: 2;
+}
+
+.SubmitSuccess h1 {
+  font-size: 24px; /* Larger font size for heading */
+  margin-bottom: 10px; /* Space between heading and subheading */
+}
+
+.SubmitSuccess h2 {
+  font-size: 18px; /* Smaller font size for subheading */
+}
+.JobArrays {
+    top: 62%;
+    display: flex;
+    position: relative;
+    font-size: 13px;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slight box shadow for depth */
+    background: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient */
+    
+    width: 660px;
+}
+
+.Buttons {
+    margin: 0 10px;
+    padding: 15px 25px;
+    border: none; 
+    border-radius: 15px;
+    background-color: #fff; 
+    color: #3498db; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.Buttons:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.Buttons:hover + .onHover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.LargeBanner {
+    padding-top: 10%;
+    font-size: 80px;
+    font-weight: 550;
+    color: black;
+}
+
+.Secondarybanner {
+    font-size: 31.25px;
+    font-weight: 375;
+}
+
+.GreetingInterface {
+    margin: 170px;
+    margin-top: 20px;
+}
+.FactsAboutUser{
+position: absolute;
+left: 75%;
+top: 500px;
+width: 550px;
+
+
+
+
+}
+.onHover {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.Form {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Adjust the width as needed */
+    max-width: 700px; /* Set a maximum width to prevent it from stretching too much on larger screens */
+    padding-top: 3800px;
+  
+
+    @media screen and (max-width: 768px) {
+   
+    }
+  }
+.formInput {
+    display: block;
+    margin: 60px auto; 
+    text-align: center;
+    width: 50%;
+
+}
+.formtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .Labels {
+    font-size: large;
+    text-align: center;
+    width: 50%;
+    font-weight: 100;
+    margin-bottom: 10px;
+    font-size: 20PX; 
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 8px; 
+    box-sizing: border-box;
+
+    
+
+  }
+
+  .Form label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Form input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    bottom:85px;
+   margin-right: 8px
+  }
+/* Custom styles for checked checkboxes */
+.Form input[type="checkbox"]:checked {
+  background-color: #4CAF50; 
+  border: 2px solid #4CAF50; /* Set border color when checked */
+  color: #fff; /* Set text color when checked */
+}
+
+.FormTitle{
+    position: relative;
+    font-size: 50px;
+    top: 32px
+
+
+
+
+}
+
+
+
+@media (max-width: 950px) {
+  .GreetingInterface{position: relative;
+  right:10%}
+
+  }
+  
+
+  @media (max-width: 506px) {
+    .GreetingInterface{position: relative;
+    right:43%;}
+
+    .LargeBanner{
+     font-size: 30px;
+     width: 500px;
+     position: relative;
+     top:100px
+    }
+
+    .Secondarybanner{
+    display: none;
+    }
+
+    .JobArrays{width: 400px;
+      top:100px;
+    height: 60px;}
+ 
+.Buttons{
+  position: relative;
+  margin: 0 2px;
+  padding: 2px 12px;
+  right: 8px;
+
+
+}
+   
+.Search{
+  position: relative;
+  top:100px;
+  width:500px;
+  
+}
+
+
+.inputarea{
+  width: 90%;
+}
+
+button.Searchbutton{ width: 400px;
+  right:40px;
+
+
+}
+
+.BenefitList{
+
+
+  display: none;
+}
+
+.Benefits{
+  display: none;
+}
+
+.Form{
+position: relative;
+top:110px;
+margin: 20px;
+
+
+}
+#AgenKlikLogo{
+  width: 200px;
+}
+
+.AgenKlikLogo{
+  width: 200px;
+}
+    }
+
+
+    @media (max-width:480px){
+
+      .GreetingInterface{position: relative;
+        right:38%;}
+
+
+
+    }
