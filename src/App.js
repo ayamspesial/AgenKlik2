@@ -19,10 +19,9 @@ function App() {
         <>
             <Header />
             <div className='content'>
-                <Routes>
-                <Route path='/AgenKlik/#/home' element={<HomePage />} />
+                <Route path='/' element={<HomePage />} />
                 <Route path='/Listing' element={<Listing />} />
-                <Route path='/AgenKlik/#/hiring' element={<Form />} />
+                <Route path='/hiring' element={<Form />} />
                 <Route path='/pembantu' element={<Pembantu />} />
                 <Route path='/supir' element={<Supir />} />
                 <Route path='/baby-sitter' element={<BabySitter />} />
@@ -31,7 +30,6 @@ function App() {
                 <Route path='/tukang-kebun' element={<TukangKebun />} />
                 <Route path='/SearchResult' element={<SearchResult />} />
                 <Route path='/Listing/payment' element={<Payment />} />
-                </Routes>
             </div>
         </>
     );
