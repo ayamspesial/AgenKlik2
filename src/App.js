@@ -20,17 +20,17 @@ function App() {
             <Header />
             <div className='content'>
                 <Routes>
-                <Route path='#/Home' element={<HomePage />} />
-                <Route path='#/Listing' element={<Listing />} />
-                <Route path='#/hiring' element={<Form />} />
-                <Route path='#/pembantu' element={<Pembantu />} />
-                <Route path='#/supir' element={<Supir />} />
-                <Route path='#/baby-sitter' element={<BabySitter />} />
-                <Route path='#/perawat-lansia' element={<PerawatLansia />} />
-                <Route path='#/penajak-hewan' element={<PenajakHewan />} />
-                <Route path='#/tukang-kebun' element={<TukangKebun />} />
-                <Route path='#/SearchResult' element={<SearchResult />} />
-                <Route path='#/Listing/payment' element={<Payment />} />
+                <Route path='/' element={<HomePage />} />
+                <Route path='/Listing' element={<Listing />} />
+                <Route path='/hiring' element={<Form />} />
+                <Route path='/pembantu' element={<Pembantu />} />
+                <Route path='/supir' element={<Supir />} />
+                <Route path='/baby-sitter' element={<BabySitter />} />
+                <Route path='/perawat-lansia' element={<PerawatLansia />} />
+                <Route path='/penajak-hewan' element={<PenajakHewan />} />
+                <Route path='/tukang-kebun' element={<TukangKebun />} />
+                <Route path='/SearchResult' element={<SearchResult />} />
+                <Route path='/Listing/payment' element={<Payment />} />
                 </Routes>
             </div>
         </>
