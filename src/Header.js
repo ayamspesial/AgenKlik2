@@ -17,7 +17,7 @@ export default function Header() {
         </div>
 
         <ul className="nav-list">
-          <li><a href="/">Home</a></li>
+          <li><a href="#/">Home</a></li>
           <li><a href="#/about">About</a></li>
           <li className="dropdown">
             <a href="#/services">Services</a>
