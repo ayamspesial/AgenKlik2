@@ -14,7 +14,7 @@ export default function Pembantu(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk";
+          const url = "https://sheetdb.io/api/v1/8hqpxkavh1psm";
        
           axios.get(url)
             .then(response => {

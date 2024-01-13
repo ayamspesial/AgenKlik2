@@ -29,12 +29,13 @@ function  FetchData() {
   const [Rendered, setRendered] = useState(false);
 
   useEffect(() => {
-    const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk";
+    const url = "https://sheetdb.io/api/v1/xadtv99ewr3em";
 
     axios.get(url)
       .then(response => {
         setData(response.data);
         setRendered(true);
+        console.log(response.data)
       })
       .catch(error => {
         console.error("Error fetching data:", error);
