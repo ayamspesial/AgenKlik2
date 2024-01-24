@@ -51,8 +51,15 @@ const config = {
   }
 }
 
-const response = await axios.post("http://localhost:1000/api/payment/process-transactions", data, config)
+const baseURL = 'https://plum-nice-ant.cyclic.app';
 
+const axiosInstance = axios.create({
+  baseURL,
+
+});
+
+
+const response = await axiosInstance.post("/api/payment/process-transactions", data, config);
 setToken(response.data.token)
   };
 
