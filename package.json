@@ -1,5 +1,5 @@
 {
-   "homepage": "https://ayamspesial.github.io/AgenKlik2/",
+   "homepage": "https://ayamspesial.github.io/AgenKlik2/#",
    "name": "my-app",
    "version": "0.1.0",
    "private": true,
@@ -30,7 +30,7 @@
    "scripts": {
       "vite": "vite --open",
       "start": "vite start",
-      "build": "vite build",
+      "build": "react-scripts build",
       "test": "vite test",
       "eject": "vite eject",
       "predeploy": "npm run build",
