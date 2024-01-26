@@ -20,6 +20,7 @@
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
       "react-router-dom": "^6.21.1",
+      "react-scripts": "^5.0.1",
       "react-slick": "^0.29.0",
       "react-toastify": "^9.1.3",
       "vite": "^5.0.12",
@@ -30,7 +31,7 @@
    "scripts": {
       "vite": "vite --open",
       "start": "vite start",
-      "build": "react-scripts build",
+      "build": "vite build",
       "test": "vite test",
       "eject": "vite eject",
       "predeploy": "npm run build",
