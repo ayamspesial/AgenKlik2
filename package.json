@@ -36,7 +36,7 @@
       "eject": "vite eject",
       "predeploy": "npm run build",
       "serve": "vite preview",
-      "deploy": "gh-pages -d build",
+      "deploy": "gh-pages -d dist",
       "dev": "nodemon server.js"
    },
    "eslintConfig": {
