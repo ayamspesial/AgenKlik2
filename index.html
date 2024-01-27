@@ -39,6 +39,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script type="module" src="/src/index.jsx"></script>
+    <script type="module">
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = '/static/js/main.c1007776.chunk.js'; // Replace with your actual hash
+      document.body.appendChild(script);
+    </script>
   </body>
 </html>
