@@ -90,11 +90,11 @@ setPhoneNumber("")
   },[token]);
 
   useEffect(() => {
-    const midtransURL = "https://app.midtrans.com/snap/v1/transactions";
+    const midtransURL = "https://app.midtrans.com/snap/snap.js";
     let scriptTag = document.createElement("script");
     scriptTag.src = midtransURL;
   
-    const midtransClientKey = "SB-Mid-client-NxtFho1e1so1Wr04";
+    const midtransClientKey = "Mid-client-0_w4bKYtqT-4HOeP";
     scriptTag.setAttribute("data-client-key", midtransClientKey);
   
     document.body.appendChild(scriptTag); 

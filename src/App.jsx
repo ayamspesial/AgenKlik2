@@ -20,8 +20,6 @@ function App() {
         <Router>
    <Header/>
             <Routes>
-        
-
                 <Route path='/' element={<HomePage />} />
                 <Route path='/Listing' element={<Listing />} />
                 <Route path='/hiring' element={<Form />} />
