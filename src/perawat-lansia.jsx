@@ -14,7 +14,7 @@ export default function PerawatLansia(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/8hqpxkavh1psm";
+          const url = "https://plum-nice-ant.cyclic.app/getUsers";
       
           axios.get(url)
             .then(response => {
@@ -71,7 +71,7 @@ export default function PerawatLansia(){
               <h1 className="Title">Perawat Lansia</h1>
               <div className="Slider">
                 {data.map((props, index) => {
-                  if (props.verified === "TRUE" && props.occupation === "Perawat Lansia") {
+                  if (props.verified = true && props.occupation === "Perawat Lansia") {
                     return (
                       <div onClick={() => handleClick(props,index)}>
                       

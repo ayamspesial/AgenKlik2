@@ -14,7 +14,7 @@ export default function PenajakHewan(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/8hqpxkavh1psm";
+          const url = "https://plum-nice-ant.cyclic.app/getUsers";
       
           axios.get(url)
             .then(response => {
@@ -70,7 +70,7 @@ export default function PenajakHewan(){
               <h1 className="Title">Penajak Hewan</h1>
               <div className="Slider">
                 {data.map((props, index) => {
-                  if (props.verified === "TRUE" && props.occupation === "Penajak Hewan") {
+                  if (props.verified = true && props.occupation === "Penajak Hewan") {
                     return (
                       <div onClick={() => handleClick(props,index)}>
                       

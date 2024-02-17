@@ -33,8 +33,22 @@ font-size: xx-small;
 
   }
 .CanNegotiate{
-  color: lightgreen;
+  background-color: green;
+  color: #fff;
+  border-radius: 15px;
+  width: 280px;
+  padding: 10px;
+  font-size: 20px;
 
+}
+
+.CantNegotiate{
+  background-color: #ee241a;
+  color: #fff;
+  border-radius: 15px;
+  width: 280px;
+  padding: 10px;
+  font-size: 20px;
 }
 .TopBox {
     background-image: url(360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg);
@@ -74,17 +88,18 @@ font-size: xx-small;
 
 }
 
-
 .Payment{
 
-position: absolute;
-  top: 200px;
+  position: fixed; /* Use fixed position to keep the element centered at all times */
+  top: 50%; /* Position it vertically at the center of the viewport */
+  left: 50%; /* Position it horizontally at the center of the viewport */
+  transform: translate(-50%, -50%); /* Use transform to perfectly center the element */
   font-size: 30px;
-  padding-left: 20px;
   background-color: #115E83;
   color: #fff;
   padding: 30px;
   border-radius: 29px;
+  text-align: center;
 }
 
 .FillIn{
@@ -98,16 +113,17 @@ padding-top: 10px;
     cursor: pointer;
     display: none;
 }
-
 .InputRecepient {
   display: block;
-  margin-top: 30px;
+  margin: 30px auto; /* Auto margins horizontally center the element */
   width: 300px;
   height: 30px;
   background-color: transparent;
   border: 1px solid white;
   color: white;
   cursor: pointer;
+  text-align: center;
+
 }
 
 .InputRecepient::placeholder{
@@ -435,6 +451,7 @@ position: absolute;
   color: #000000;
   width: 100%;
   }
+
   #PaymentButton {
     position: relative;
     padding: 15px 200px;
@@ -457,7 +474,8 @@ position: absolute;
 
   .NegotiableText{
     position: relative;
-    top:-140%
+    top:-140%;
+
 
 
 
@@ -467,14 +485,20 @@ position: absolute;
   }
   
 .QuestionContainer{
-  position: relative;
-  top:480px;
+  position: absolute;
+  top:500px;
   width: 50%;
   left: 30px;
 
 }
 
-
+.QuestionContainer2{
+  position: absolute;
+  top:1000px;
+  width: 50%;
+  left: 30px;
+ 
+}
 
 .MiniProfile{
      position: absolute;
@@ -698,7 +722,10 @@ position: absolute;
 left: 75%;
 top: 500px;
 width: 550px;
-
+background-color:#0873ee;
+border-radius: 15px;
+padding: 15px;
+color: #fff;
 
 
 
@@ -882,3 +909,60 @@ margin: 20px;
 
 
     }
+
+    .PaymentSuccess {
+      position: absolute;
+  
+      left: 50%;
+      transform: translate(-50%, -80%);
+      background-color: #0873ee;
+      padding: 20px;
+      border-radius: 29px;
+      width: 800px; /* Adjust width as needed */
+      font-size: 20px;
+    }
+
+
+    .PaymentSuccess3{
+padding: 20px;
+
+      color: rgb(0, 0, 0);
+    }
+    
+    .PaymentSuccess2 {
+      margin: 30px;
+      color: white;
+    }
+
+
+
+
+    
+
+    .PurchaseLogo{
+      width: 200px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .PaidInformation{background-color: #ffffff;
+      border-radius: 15px;}
+    
+      .PaymentButton {
+        border: none;
+        color: white;
+        padding: 12px 29px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .ButtonRed {
+        background-color: #ee241a; /* Light red */
+      }
+      
+      .ButtonGreen {
+        background-color: #77dd77; /* Light green */
+      }

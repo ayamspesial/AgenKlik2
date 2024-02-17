@@ -29,7 +29,7 @@ function  FetchData() {
   const [Rendered, setRendered] = useState(false);
 
   useEffect(() => {
-    const url = "https://sheetdb.io/api/v1/xadtv99ewr3em";
+    const url = "https://plum-nice-ant.cyclic.app/getUsers";
 
     axios.get(url)
       .then(response => {
@@ -61,6 +61,8 @@ if(Rendered === true ){
       key: props.id,
       firstName: props.firstName,
       lastName: props.lastName,
+      phoneNumber: props.phoneNumber,
+      email: props.email,
       Age: props.Age,
       occupation: props.occupation,
       qualifications: props.qualifications,
@@ -192,7 +194,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
         <h1 className="Title">PRT</h1>
         <div className="Slider">
           {data.map((props, index) => {
-            if (props.verified === "TRUE" && props.occupation === "Pembantu") {
+            if (props.verified = true && props.occupation === "Pembantu") {
               return (
                 <div key={props.id} onClick={() => handleClick(props,index)}>
                 
@@ -233,7 +235,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
         <h1 className="Title">Supir</h1>
         <div className="Slider">
           {data.map((props, index) => {
-            if (props.verified === "TRUE" && props.occupation === "Supir") {
+            if (props.verified = true && props.occupation === "Supir") {
               return (
                 <div key={props.id}  onClick={() => handleClick(props,index)}>
                 
@@ -274,7 +276,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
         <h1 className="Title">BabySitter</h1>
         <div className="Slider">
           {data.map((props, index) => {
-            if (props.verified === "TRUE" && props.occupation === "babysitter") {
+            if (props.verified = true && props.occupation === "babysitter") {
               return (
                 <div  key={props.id} onClick={() => handleClick(props,index)}>
                 

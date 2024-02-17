@@ -14,7 +14,7 @@ export default function Pembantu(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/8hqpxkavh1psm";
+          const url = "https://plum-nice-ant.cyclic.app/getUsers";
        
           axios.get(url)
             .then(response => {
@@ -70,7 +70,7 @@ export default function Pembantu(){
               <h1 className="Title">PRT</h1>
               <div className="Slider">
                 {data.map((props, index) => {
-                  if (props.verified === "TRUE" && props.occupation === "Pembantu") {
+                  if (props.verified === "true" && props.occupation === "Pembantu") {
                     return (
                       <div onClick={() => handleClick(props,index)}>
                       

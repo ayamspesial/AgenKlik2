@@ -11,8 +11,9 @@ export default function Listing() {
   
 const state = {
 firstName : stateData.firstName,
-lastName: stateData.lastName
-
+lastName: stateData.lastName,
+phoneNumber: stateData.phoneNumber,
+email:stateData.email
 }
  
    
@@ -31,19 +32,21 @@ lastName: stateData.lastName
           <h2 className="WorkDetails">{stateData.occupation} | {stateData.askingSalary} P/M</h2>
           <h1 className="NegotiableText">
             
-            {stateData.salaryNegotiable? <p className="CanNegotiate">Boleh Dinegosiaskian✅</p>: "tidak bisa dinegosiaskian"}</h1>
+            {stateData.salaryNegotiable? <p className="CanNegotiate">Boleh Dinegosiaskian</p>: <p className="CantNegotiate">Tidak bisa dinegosiaskian gaji</p>}</h1>
            
         
         
         </div>
         <div className="Body">
+ 
         <div className="QuestionContainer">
-            <h1 style={{ fontSize: '50px', borderBottom: '2px solid black', fontWeight: 'bold' }}> TENTANG SAYA </h1>
+            <h1 style={{ fontSize: '50px',color:"white",textAlign:"center",  fontWeight: 'bold', backgroundColor: '#0873ee',borderRadius: '15px'}}> TENTANG SAYA </h1>
             <h2> {stateData.question1} </h2>
           </div>
-          <div  className="QuestionContainer"> 
-            <h1 style={{ fontSize: '40px', borderBottom: '1px dashed black', fontWeight: 'bold' }}>APAKAH YANG KALIAN BIKIN LEBIH MEMENUHI SYARAT DARI SETIAP ORANG?</h1>
+          <div  className="QuestionContainer2"> 
+            <h1 style={{ fontSize: '50px',color:"white",textAlign:"center",  fontWeight: 'bold', backgroundColor: '#0873ee',borderRadius: '15px'}}>APAKAH YANG KALIAN BIKIN LEBIH MEMENUHI SYARAT DARI SETIAP ORANG?</h1>
             <h2>{stateData.question2}</h2>
+   
           </div>
 
 

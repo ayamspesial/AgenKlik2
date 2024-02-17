@@ -14,7 +14,7 @@ export default function Supir() {
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk";
+          const url = "https://plum-nice-ant.cyclic.app/getUsers";
       
           axios.get(url)
             .then(response => {
@@ -70,7 +70,7 @@ export default function Supir() {
               <h1 className="Title">Supir</h1>
               <div className="Slider">
                 {data.map((props, index) => {
-                  if (props.verified === "TRUE" && props.occupation === "supir") {
+                  if (props.verified = true && props.occupation === "supir") {
                     return (
                       <div onClick={() => handleClick(props,index)}>
                       

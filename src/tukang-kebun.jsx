@@ -14,7 +14,7 @@ export default function TukangKebun(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk";
+          const url = "https://plum-nice-ant.cyclic.app/getUsers";
       
           axios.get(url)
             .then(response => {
@@ -70,7 +70,7 @@ export default function TukangKebun(){
               <h1 className="Title">Tukang Kebun</h1>
               <div className="Slider">
                 {data.map((props, index) => {
-                  if (props.verified === "TRUE" && props.occupation === "Tukang Kebun") {
+                  if (props.verified = true && props.occupation === "Tukang Kebun") {
                     return (
                       <div onClick={() => handleClick(props,index)}>
                       

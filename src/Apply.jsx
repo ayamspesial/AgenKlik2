@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
       const navigate = useNavigate();
-  const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk"
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -44,113 +43,129 @@ export default function Form() {
     setFormData((prevValues) => ({
       ...prevValues,
       [name]: type === "checkbox" ? checked : value,
-      reasoning: name === "Pets" && checked ? "" : value ,
+
 
      
     }));
   
     if (event.target.files && event.target.files.length > 0) {
-      if (name === 'Profilepic') {
+      const inputName = event.target.name;
+      if (inputName === 'Profilepic') {
         SetLabel2(event.target.files[0].name);
-      } else if (name === 'KTP') {
-        SetLabel2(event.target.files[0].name);
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setFormData((prevValues) => ({
+            ...prevValues,
+            Profilepic: e.target.result,
+          }));
+        };
+        reader.readAsDataURL(file);
+      } 
+      if (inputName === 'KTP') {
+        SetLabel(event.target.files[0].name);
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setFormData((prevValues) => ({
+            ...prevValues,
+            KTP: e.target.result,
+          }));
+        };
+        reader.readAsDataURL(file);
       }
     }
   }
 
   
-function Submitted(event) {
-  event.preventDefault(); 
-  const excludedFields = ["strength1", "strength2", "strength3", "strength4"];
-
-
-  const isEmpty = Object.entries(formData).some(([name, value]) => {
-    return !excludedFields.includes(name) && (value === "" || value === null);
-  });
-
-  if (isEmpty) {
-    alert("Silakan isi semua masukan");
-    return;
-  }
-  Axios.post(url, ({
-  firstName: formData.firstName,
-  lastName: formData.lastName,
-  phoneNumber: formData.phoneNumber,
-  Age: formData.Age,
-  email: formData.email,
-  occupation: formData.occupation,
-  qualifications: formData.qualifications,
-  question1: formData.question1,
-  question2: formData.question2,
-  Pets: formData.Pets,
-  reasoning: formData.reasoning,
-  Profilepic: formData.Profilepic,
-  KTP: formData.KTP,
-  askingSalary: formData.askingSalary,
-  salaryNegotiable: formData.salaryNegotiable,
-  strength1: formData.strength1,
-  strength2: formData.strength2,
-  strength3: formData.strength3,
-  strength4: formData.strength4,
-  WorkExperience: formData.WorkExperience,
-  tingkatpendidikan: formData.tingkatpendidikan,
-  Anak: formData.Anak,
-  Gender: formData.Gender,
-  verified: formData.verified,
-  Location: formData.Locatiom
-  }))
-    .then((response) => {
-      // Handle the successful response
-      console.log("Response:", response.data);
-      setSubmitState(true);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        phoneNumber: "",
-        Age: "",
-        email: "",
-        occupation: "",
-        qualifications: "",
-        question1: "",
-        question2: "",
-        Pets: false,
-        reasoning: null,
-        Profilepic: "",
-        KTP: "",
-        askingSalary: "",
-        salaryNegotiable: "",
-        strength1: "",
-        strength2: "",
-        strength3: "",
-        strength4: "",
-        verified: false,
-        WorkExperience: "",
-        tingkatpendidikan: "",
-        Anak: false,
-        Gender: "",
-        Locatiom: "",
-      });
-    })
-
-
-    .catch((error) => {
-      // Handle errors
-      console.error("Error:", error);
-      console.error("Request Config:", error.config);
-
-      alert("Error: " + error.message);
+  function Submitted(event) {
+    event.preventDefault(); 
+    const excludedFields = ["strength1", "strength2", "strength3", "strength4"];
+  
+    const isEmpty = Object.entries(formData).some(([name, value]) => {
+      return !excludedFields.includes(name) && (value === "" || value === null);
     });
-    
-
-
-}
+  
+    if (isEmpty) {
+      alert("Silakan isi semua masukan");
+      return;
+    }
+  
+    Axios.post("https://plum-nice-ant.cyclic.app/AddData", {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      phoneNumber: formData.phoneNumber,
+      Age: formData.Age,
+      email: formData.email,
+      occupation: formData.occupation,
+      qualifications: formData.qualifications,
+      question1: formData.question1,
+      question2: formData.question2,
+      Pets: formData.Pets,
+      reasoning: formData.reasoning,
+      Profilepic: formData.Profilepic,
+      KTP: formData.KTP,
+      askingSalary: formData.askingSalary,
+      salaryNegotiable: formData.salaryNegotiable,
+      strength1: formData.strength1,
+      strength2: formData.strength2,
+      strength3: formData.strength3,
+      strength4: formData.strength4,
+      WorkExperience: formData.WorkExperience,
+      tingkatpendidikan: formData.tingkatpendidikan,
+      Anak: formData.Anak,
+      Gender: formData.Gender,
+      verified: formData.verified,
+      Location: formData.Location
+    })
+      .then((response) => {
+        // Handle the successful response
+        console.log("Response:", response.data);
+        setSubmitState(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          Age: "",
+          email: "",
+          occupation: "",
+          qualifications: "",
+          question1: "",
+          question2: "",
+          Pets: false,
+          reasoning: null,
+          Profilepic: "",
+          KTP: "",
+          askingSalary: "",
+          salaryNegotiable: "",
+          strength1: "",
+          strength2: "",
+          strength3: "",
+          strength4: "",
+          verified: false,
+          WorkExperience: "",
+          tingkatpendidikan: "",
+          Anak: false,
+          Gender: "",
+          Location: "",
+        });
+      })
+  
+      .catch((error) => {
+        // Handle errors
+        console.error("Error:", error);
+        console.error("Request Config:", error.config);
+  
+        alert("Error: " + error.message);
+      });
+  }
   return (
     <>
 
 { submitState?<div className='SubmitSuccess' >
           <h1>Applikasi kalian sedang ditinjau,</h1>
           <h2>kami akan memberikan respon ke kalianda melalui email untuk hasilnya</h2>
-          <button onClick={() => navigate('/Home')} className='Button'>Home</button>
+          <button onClick={() => navigate('/')} className='Button'>Home</button>
 
         </div> : null}
 
@@ -417,6 +432,11 @@ function Submitted(event) {
   />
   <label className="custom-file-input" htmlFor="ktpInput">{labels}</label>
   <span className="file-name"></span>
+
+
+
+
+
 </div>
 
 <button type="submit">Submit</button>
