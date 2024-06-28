@@ -9,7 +9,7 @@ export default function Header() {
       <div className="navbar">
         <div className="menu-toggle" id="mobile-menu">
           <ul className="dropdown-menu-mobile">
-            <ul className="dropdown-menu-mobile-input"><a href="#/home">Home</a></ul>
+            <ul className="dropdown-menu-mobile-input"><a href="#/">Home</a></ul>
             <ul className="dropdown-menu-mobile-input"><a href="#/about">About</a></ul>
             <ul className="dropdown-menu-mobile-input"><a href="#/hiring">Hiring</a></ul>
             <ul className="dropdown-menu-mobile-input"><a href="#/contact-us">Contact Us</a></ul>

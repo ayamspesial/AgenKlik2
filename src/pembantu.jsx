@@ -14,7 +14,7 @@ export default function Pembantu(){
         const [Rendered, setRendered] = useState(false);
       
         useEffect(() => {
-          const url = "https://plum-nice-ant.cyclic.app/getUsers";
+          const url = import.meta.env.VITE_REACT_APP_API_URL_GET;
        
           axios.get(url)
             .then(response => {
@@ -39,9 +39,11 @@ export default function Pembantu(){
       
       if(Rendered === true ){
           const state = {
-            key: index,
+            key: props.id,
             firstName: props.firstName,
             lastName: props.lastName,
+            phoneNumber: props.phoneNumber,
+            email: props.email,
             Age: props.Age,
             occupation: props.occupation,
             qualifications: props.qualifications,
@@ -49,13 +51,18 @@ export default function Pembantu(){
             question2: props.question2,
             Pets: props.Pets,
             reasoning: props.reasoning,
-            profilePic: props.profilePic,
+            ProfilePic: props.ProfilePic,
             askingSalary: props.askingSalary,
             salaryNegotiable: props.salaryNegotiable,
             strength1: props.strength1,
             strength2: props.strength2,
             strength3: props.strength3,
             strength4: props.strength4,
+            WorkExperience: props.WorkExperience,
+            tingkatpendidikan: props.tingkatpendidikan,
+            Anak: props.Anak,
+            Gender: props.Gender,
+            Location: props.Location
           } 
       
           // Use navigate to go to the '/Listing' route with the specified state
@@ -75,23 +82,27 @@ export default function Pembantu(){
                       <div onClick={() => handleClick(props,index)}>
                       
                       <ProfileBox 
-                        key={index}
-                        name={props.name}
-                        lastName={props.lastName}
-                        Age={props.Age}
-                        occupation={props.occupation}
-                        qualifications={props.qualifications}
-                        question1={props.question1}
-                        question2={props.question2}
-                        Pets={props.Pets}
-                        reasoning={props.reasoning}
-                        profilePic={props.profilePic}
-                        askingSalary={props.askingSalary}
-                        salaryNegotiable={props.salaryNegotiable}
-                        strength1={props.strength1}
-                        strength2={props.strength2}
-                        strength3={props.strength3}
-                        strength4={props.strength4}
+                         firstName={props.firstName}
+                         lastName={props.lastName}
+                         Age={props.Age}
+                         occupation={props.occupation}
+                         qualifications={props.qualifications}
+                         question1={props.question1}
+                         question2={props.question2}
+                         Pets={props.Pets}
+                         reasoning={props.reasoning}
+                         ProfilePic={props.ProfilePic}
+                         askingSalary={props.askingSalary}
+                         salaryNegotiable={props.salaryNegotiable}
+                         strength1={props.strength1}
+                         strength2={props.strength2}
+                         strength3={props.strength3}
+                         strength4={props.strength4}
+                         WorkExperience={props.WorkExperience}
+                         tingkatpendidikan={props.tingkatpendidikan}
+                         Anak={props.Anak}
+                         Gender={props.Gender}
+                         Location = {props.Location}
                       />
                     
                   </div>

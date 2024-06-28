@@ -1,5 +1,5 @@
 import React from "react";
-
+import DefaultPhoto from "./360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg";
 
 export default function ProfileBox (props){
 return(
@@ -10,7 +10,7 @@ return(
       
         <h1>{props.Location} || {props.WorkExperience}</h1>
         </div>
-<img src = {props.profilePic}/>
+<img src = {props.ProfilePic} className="ProfilePicture"/>
 
 </div>
     <div className="Bottombox">

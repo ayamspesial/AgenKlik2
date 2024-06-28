@@ -3,7 +3,37 @@ import React, { useEffect, useState } from 'react';
 import AgenKlikPhoto from "./AgenKlik Blue  Logo.png"
 import "./MaidHome.css";
 import { useNavigate } from 'react-router-dom';
+import _ from 'lodash';
 
+async function reduce_image_file_size(base64Str, MAX_WIDTH = 200, MAX_HEIGHT = 200) {
+  let resized_base64 = await new Promise((resolve) => {
+      let img = new Image()
+      img.src = base64Str
+      img.onload = () => {
+          let canvas = document.createElement('canvas')
+          let width = img.width
+          let height = img.height
+
+          if (width > height) {
+              if (width > MAX_WIDTH) {
+                  height *= MAX_WIDTH / width
+                  width = MAX_WIDTH
+              }
+          } else {
+              if (height > MAX_HEIGHT) {
+                  width *= MAX_HEIGHT / height
+                  height = MAX_HEIGHT
+              }
+          }
+          canvas.width = width
+          canvas.height = height
+          let ctx = canvas.getContext('2d')
+          ctx.drawImage(img, 0, 0, width, height)
+          resolve(canvas.toDataURL('image/jpeg', 1)) 
+      }
+  });
+  return resized_base64;
+}
 export default function Form() {
       const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -18,7 +48,7 @@ export default function Form() {
     question2: "",
     Pets: false,
     reasoning: null,
-    Profilepic:"",
+    ProfilePic:"",
     KTP:"",
     askingSalary:"",
     salaryNegotiable:"",
@@ -41,57 +71,57 @@ export default function Form() {
     const { name, type, value, checked } = event.target;
 
     setFormData((prevValues) => ({
-      ...prevValues,
-      [name]: type === "checkbox" ? checked : value,
-
-
-     
+        ...prevValues,
+        [name]: type === "checkbox" ? checked : value,
     }));
-  
+
     if (event.target.files && event.target.files.length > 0) {
-      const inputName = event.target.name;
-      if (inputName === 'Profilepic') {
-        SetLabel2(event.target.files[0].name);
+        const inputName = event.target.name;
         const file = event.target.files[0];
         const reader = new FileReader();
-        reader.onload = (e) => {
-          setFormData((prevValues) => ({
-            ...prevValues,
-            Profilepic: e.target.result,
-          }));
+        reader.onload = async (e) => {
+            const base64Str = e.target.result;
+            if (inputName === 'ProfilePic') {
+              SetLabel2(event.target.files[0].name);
+                const resized = await reduce_image_file_size(base64Str);
+                setFormData((prevValues) => ({
+                    ...prevValues,
+                    ProfilePic: resized,
+                }));
+            } else if (inputName === 'KTP') {
+              SetLabel(event.target.files[0].name);
+                const resized = await reduce_image_file_size(base64Str);
+                setFormData((prevValues) => ({
+                    ...prevValues,
+                    KTP: resized,
+                }));
+            }
         };
         reader.readAsDataURL(file);
-      } 
-      if (inputName === 'KTP') {
-        SetLabel(event.target.files[0].name);
-        const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          setFormData((prevValues) => ({
-            ...prevValues,
-            KTP: e.target.result,
-          }));
-        };
-        reader.readAsDataURL(file);
-      }
     }
-  }
+}
+
 
   
   function Submitted(event) {
     event.preventDefault(); 
     const excludedFields = ["strength1", "strength2", "strength3", "strength4"];
   
+    const emptyFields = [];
     const isEmpty = Object.entries(formData).some(([name, value]) => {
-      return !excludedFields.includes(name) && (value === "" || value === null);
+        if (!excludedFields.includes(name) && (value === "" || value === null)) {
+            emptyFields.push(name);
+            return true;
+        }
+        return false;
     });
-  
+    
     if (isEmpty) {
-      alert("Silakan isi semua masukan");
-      return;
+        const emptyFieldNames = emptyFields.join(", ");
+        alert(`Silakan isi semua masukan: ${emptyFieldNames}`);
+        return;
     }
-  
-    Axios.post("https://plum-nice-ant.cyclic.app/AddData", {
+    Axios.post(import.meta.env.VITE_REACT_APP_API_URL_POST, {
       firstName: formData.firstName,
       lastName: formData.lastName,
       phoneNumber: formData.phoneNumber,
@@ -103,7 +133,7 @@ export default function Form() {
       question2: formData.question2,
       Pets: formData.Pets,
       reasoning: formData.reasoning,
-      Profilepic: formData.Profilepic,
+      ProfilePic: formData.ProfilePic,
       KTP: formData.KTP,
       askingSalary: formData.askingSalary,
       salaryNegotiable: formData.salaryNegotiable,
@@ -134,7 +164,7 @@ export default function Form() {
           question2: "",
           Pets: false,
           reasoning: null,
-          Profilepic: "",
+          ProfilePic: "",
           KTP: "",
           askingSalary: "",
           salaryNegotiable: "",
@@ -409,7 +439,7 @@ export default function Form() {
          <div className="file-input-container">
   <label htmlFor="photoInput" className='Labels'>Profile Picture</label>
   <input
-    name='Profilepic'
+    name='ProfilePic'
     type="file"
     id="photoInput"
     accept="image/*"

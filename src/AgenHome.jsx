@@ -29,13 +29,12 @@ function  FetchData() {
   const [Rendered, setRendered] = useState(false);
 
   useEffect(() => {
-    const url = "https://plum-nice-ant.cyclic.app/getUsers";
-
+    const url = import.meta.env.VITE_REACT_APP_API_URL_GET;
     axios.get(url)
       .then(response => {
         setData(response.data);
         setRendered(true);
-        console.log(response.data)
+ 
       })
       .catch(error => {
         console.error("Error fetching data:", error);
@@ -70,7 +69,7 @@ if(Rendered === true ){
       question2: props.question2,
       Pets: props.Pets,
       reasoning: props.reasoning,
-      profilePic: props.profilePic,
+      ProfilePic: props.ProfilePic,
       askingSalary: props.askingSalary,
       salaryNegotiable: props.salaryNegotiable,
       strength1: props.strength1,
@@ -185,11 +184,6 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
 
 
 
-
-          
-
-
-
       <div className="Categories" id="Pembantu">
         <h1 className="Title">PRT</h1>
         <div className="Slider">
@@ -208,7 +202,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
                   question2={props.question2}
                   Pets={props.Pets}
                   reasoning={props.reasoning}
-                  profilePic={props.profilePic}
+                  ProfilePic={props.ProfilePic}
                   askingSalary={props.askingSalary}
                   salaryNegotiable={props.salaryNegotiable}
                   strength1={props.strength1}
@@ -249,7 +243,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
                        question2={props.question2}
                        Pets={props.Pets}
                        reasoning={props.reasoning}
-                       profilePic={props.profilePic}
+                       ProfilePic={props.ProfilePic}
                        askingSalary={props.askingSalary}
                        salaryNegotiable={props.salaryNegotiable}
                        strength1={props.strength1}
@@ -276,7 +270,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
         <h1 className="Title">BabySitter</h1>
         <div className="Slider">
           {data.map((props, index) => {
-            if (props.verified = true && props.occupation === "babysitter") {
+            if (props.verified = true && props.occupation === "Baby Sitter") {
               return (
                 <div  key={props.id} onClick={() => handleClick(props,index)}>
                 
@@ -290,7 +284,7 @@ Transparan dan selalu tersedia kapan saja untuk kebutuhan Anda!</h1>
                      question2={props.question2}
                      Pets={props.Pets}
                      reasoning={props.reasoning}
-                     profilePic={props.profilePic}
+                     ProfilePic={props.ProfilePic}
                      askingSalary={props.askingSalary}
                      salaryNegotiable={props.salaryNegotiable}
                      strength1={props.strength1}

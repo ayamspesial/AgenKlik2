@@ -17,7 +17,7 @@ export default function SearchResult() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-      const url = "https://sheetdb.io/api/v1/yc2k6t3iekggk";
+      const url = process.env.REACT_APP_API_URL_GET;
 
       axios
         .get(url)

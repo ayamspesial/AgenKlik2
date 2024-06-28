@@ -41,7 +41,16 @@ font-size: xx-small;
   font-size: 20px;
 
 }
+.ProfilePicture{
+border-radius: 29px;
+position: relative;
+bottom: 100px;
+width: 340px;
+height: 350px;
 
+
+
+}
 .CantNegotiate{
   background-color: #ee241a;
   color: #fff;
@@ -51,7 +60,7 @@ font-size: xx-small;
   font-size: 20px;
 }
 .TopBox {
-    background-image: url(360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg);
+ 
     border-radius: 29px;
     height: 330px;
     font-size: 20px;
@@ -188,42 +197,7 @@ padding-top: 10px;
 }
 
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
 
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        background-color: #0873ee;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        
-    }
-
-    .nav-list.show {
-        display: flex;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .menu-toggle {
-      display: flex;
-      align-items: center;
-    }
-    
-    /* Style for the nav-link */
-    .nav-link {
-      position: relative;
-      display: inline-block;
-    }
- 
-    }
 
 
     /* Style for the hamburger icon (span tags) */
@@ -288,17 +262,19 @@ position: relative;
 top: 200px;
 font-size: 50px;
 display: inline;
+
 }
 
 .ProfileBox{
 position: absolute;
 transition: transform 0.3s ease-in-out;
-padding: 40px;
+padding: 20px;
 white-space: nowrap;
 padding-right: 20px; 
     position: relative; 
     display: inline-block;
       cursor: pointer;
+      height: 20px;
 }
 
 .Strengths{
@@ -517,7 +493,7 @@ position: absolute;
 .WorkDetails{
 position: relative;
 top: -140%;
-font-size: 44px;
+font-size: 14px;
 font-weight: 400;
 color: white;
 
@@ -746,9 +722,6 @@ color: #fff;
     padding-top: 3800px;
   
 
-    @media screen and (max-width: 768px) {
-   
-    }
   }
 .formInput {
     display: block;
@@ -966,3 +939,100 @@ padding: 20px;
       .ButtonGreen {
         background-color: #77dd77; /* Light green */
       }
+
+
+
+      @media screen {
+        
+      }
+
+      @media (max-width: 768px) {
+
+
+        .DetailedContainer{  overflow-x: hidden;
+     
+        }
+        .menu-toggle {
+            display: block;
+        }
+    .DetailedContainer{
+      font-size: 15px;
+    }
+        .nav-list {
+            display: none;
+            flex-direction: column;
+            background-color: #0873ee;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            
+        }
+   .TopBox{width: 20px;
+  
+    border-radius: 29px;
+    height: 330px;
+
+    z-index: 3;}
+.BasicDetails{
+position: absolute;
+top:80px ;
+  font-size: 25px;
+  font-weight: 3000;
+}
+    .MiniProfile{
+      width: 1000px;
+      top:100px;
+      height: 300px;
+      position: absolute;
+    }
+
+
+    .NegotiableText{
+position: absolute;
+top: 130px;
+    }
+
+
+  .Bottombox{width: 300px;}
+    
+        .nav-list.show {
+            display: flex;
+        }
+    
+        .dropdown:hover .dropdown-menu {
+            display: none;
+        }
+    
+        .menu-toggle {
+          display: flex;
+          align-items: center;
+        }
+        
+        /* Style for the nav-link */
+        .nav-link {
+          position: relative;
+          display: inline-block;
+        }
+
+        #PaymentButton{position: relative;
+        ; top: -10px; 
+        right: 220px;
+
+      padding: 10px 100px;}
+
+      #detailedProfilepic{
+        width: 220px;
+        height: 220px;
+        border-radius: 29px;
+        position: relative;
+        bottom: 20%;
+        left: 50%;
+      }
+     
+      .Payment{
+        width:500px;
+        height: 600px;
+        font-size: 20px;
+      }
+        }
