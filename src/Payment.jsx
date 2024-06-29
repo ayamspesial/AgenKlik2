@@ -4,7 +4,7 @@ import axios from "axios";
 import emailjs from 'emailjs-com';
 
 export default function Payment() {
-  const [name, setName] = useState('');
+  const [firstname, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -18,12 +18,18 @@ export default function Payment() {
   useEffect(() => {
     const handleMessage = (event) => {
       try {
+        console.log('Received raw data:', event.data); // Log the raw data
         const data = JSON.parse(event.data);
         setName(data.firstName);
         setLastName(data.lastName);
-        setEmail(data.email);
-        setPhoneNumber(data.phoneNumber);
         console.log('Received user data:', data);
+
+        // Send a message back to React Native to confirm receipt
+        window.ReactNativeWebView.postMessage(JSON.stringify({
+          message: 'Data received',
+          firstName:firstname,
+          lastName: lastName
+        }));
       } catch (error) {
         console.error('Failed to parse user data:', error);
       }
@@ -34,7 +40,7 @@ export default function Payment() {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []);
+  }, [name,lastName]);
 
   useEffect(() => {
     if (token) {
@@ -81,7 +87,6 @@ export default function Payment() {
   useEffect(() => {
     if (purchaseSuccess) {
       sendEmail();
-      console.log("dadad");
     }
   }, [purchaseSuccess]);
 
@@ -117,7 +122,7 @@ export default function Payment() {
     const id = generateRandomId(10);
     const data = {
       id: id,
-      firstname: name,
+      firstname: firstname,
       lastname: lastName,
       price: '100',
     };
@@ -142,7 +147,7 @@ export default function Payment() {
       <div className="FillIn">
         <div>
           <button 
-            className={`PaymentButton ${email === '' ? 'ButtonGreen' : 'ButtoGreen'}`}
+            className={`PaymentButton ${email === '' ? 'ButtonGreen' : 'ButtonGreen'}`}
             onClick={checkout}
           >
             Pay Now
